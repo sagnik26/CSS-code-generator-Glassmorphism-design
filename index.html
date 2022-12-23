@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Secular+One&display=swap');
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    height: 80vh;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(252, 245, 246);
+}
+
+/* Silder container */
+
+.slider-conatainer {
+    width: 25%;
+    margin: auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header-silder-background {
+    font-family: 'Indie Flower', cursive;
+}
+
+.slider {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 19em; 
+    height: 15px; 
+    border: 4px solid red;
+    border-radius: 10px;
+    background: red; 
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .1s; 
+    transition: opacity .2s;
+    /* margin: 1em auto; */
+}
+
+.slider:hover {
+    opacity: 0.8;
+}
+
+.fontStyle {
+    margin-top: -0.01em;
+}
+
+.fontStyle-card{
+    font-family: 'Secular One', sans-serif;
+    margin-top: -0.01em;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 15px; 
+    height: 17px; 
+    border-radius: 5px;
+    background: whitesmoke;
+    cursor: pointer; 
+  }
+
+.slider::-moz-range-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 15px; 
+    height: 17px; 
+    border-radius: 5px;
+    background: whitesmoke;
+    cursor: pointer; 
+  }
+
+.slide {
+   margin: 0.1em auto;
+   display: flex;
+   justify-content: center;
+}
+
+
+/* Color container */
+
+.color-container {
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding: 1em; */
+    padding-left: 1em;
+}
+
+.display{
+    background-color: rgb(197, 102, 0);
+    width: 100%;
+    height: 43vh;
+    border-radius: 30px;
+    margin-top: 1em;
+}
+
+.css-code{
+    width: 100%;
+    height: 30vh;
+    border: 1px solid green;
+    background-color: black;
+    border-radius: 30px;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.code {
+    width: 80%;
+    height: 18vh;
+    color: white;
+    position: relative;
+    top: 12%;
+    left: 12%;
+    /* border: 1px solid green; */
+    
+}
+
+.code h3 {
+    line-height: 1.8;
+}
+
+
+/* display */
+
+.card {
+    height: 20vh;
+    width: 50%;
+    /* border: 1px solid palevioletred; */
+    background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 20px;
+    position: relative;
+    top: 26.5%;
+    left: 24.5%;
+}
+
+.circle-one {
+    height: 8vh;
+    width: 10%;
+    background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+    border-radius: 50px;
+    position: relative;
+    top: 16%;
+    left: 19%;
+}
+
+.circle-two {
+    height: 15vh;
+    width: 19.5%;
+    background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+    border-radius: 80px;
+    position: relative;
+    top: -60%;
+    left: 67%;
+}
+
+/* copy button */
+
+.copy-btn {
+    color: white; 
+    background-color: black; 
+    cursor: pointer; 
+    position: relative; 
+    left: 3%; 
+    top: 5%;
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width:1600px) {
+
+    .code {
+        top: -2%;
+        left: 14%;
+    }
+
+    .code h3 {
+        line-height: 1.5;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="color-container">
+            <div class="display" id="disp">
+                <!-- Display the color screen here -->
+                <div class="card" id="card-disp">
+                    
+                </div>
+
+                <div class="circle-one" id="card-circle-one"></div>
+                <div class="circle-two" id="card-circle-two"></div>
+            </div>
+        
+            <div class="css-code" id="css-code-container">
+                <!-- Display the css code of the corresponding glassmorphism here -->
+                    <button class="copy-btn" id="copy"> COPY </button>
+                    <div class="code">
+                        <h3 id="css-snippet">
+                        <span style="color: violet;"> backdrop-filter </span> : blur( <span id="code-filter-one">24.9</span>px ); <br>
+                        <span style="color: violet;"> -webkit-backdrop-filter </span> : blur( <span id="code-filter-two">24.9</span>px ); <br>
+                        <span style="color: violet;"> box-shadow </span> : 0 8px 32px 0 rgba( 31 , 38 , 135 , 0.37 ); <br>
+                        <span style="color: violet;"> background-image </span> : linear-gradient( 155deg , rgba(255, 255, 255,<span id="code-grad">0</span> ) , rgba(255, 255, 255, 0));
+                        </h3>
+                    </div>
+            </div>
+        </div>
+
+      
+            
+        <div class="slider-conatainer">
+                <h1 class="header-silder-background">Background Settings</h1>
+                <div class="slide">
+                    <h2 style="color: red; margin-right: 1em;" class="fontStyle">R</h2>
+                    <input type="range" min="0" max="255" value="197" class="slider" id="myRange-red">
+                </div>
+
+                <div class="slide">
+                    <h2 style="color: green; margin-right: 1em;" class="fontStyle">G</h2>
+                    <input type="range" min="0" max="255" value="102" class="slider" id="myRange-green" style="background: green; border: 4px solid green">
+                </div>
+
+                <div class="slide">
+                    <h2 style="color: blue; margin-right: 1em;" class="fontStyle">B</h2>
+                    <input type="range" min="0" max="255" value="0" class="slider" id="myRange-blue" style="background: blue; border: 4px solid blue">
+                </div>
+
+                <div class="card-settings">
+                    <h1 class="header-silder-background">Contour settings</h1>
+                    <div class="slide" style="margin-left: -4.5em;">
+                        <h2 style=" margin-right: 1em;" class="fontStyle-card">Opacity</h2>
+                        <input type="range" min="0" max="1" step="0.01" value="0.3" class="slider" id="myRange-opacity" style="background: black; border: 4px solid black">
+                    </div>
+
+                    <div class="slide" style="margin-left: -2em;">
+                        <h2 style=" margin-right: 1em;" class="fontStyle-card">Blur</h2>
+                        <input type="range" min="0" max="25" step="0.1" value="0" class="slider" id="myRange-blur" style="background: black; border: 4px solid black">
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- <script src="style.js"></script> -->
+    <script>
+let slider_red = document.getElementById('myRange-red');
+let slider_green = document.getElementById('myRange-green');
+let slider_blue = document.getElementById('myRange-blue');
+let slider_opacity = document.getElementById('myRange-opacity');
+let slider_blur = document.getElementById('myRange-blur');
+
+let display = document.getElementById('disp');
+let card = document.getElementById('card-disp');
+let circle_one = document.getElementById('card-circle-one');
+let circle_two = document.getElementById('card-circle-two');
+
+let code_filter_one = document.getElementById('code-filter-one');
+let code_filter_two = document.getElementById('code-filter-two');
+let code_gradient = document.getElementById('code-grad');
+
+let copy_btn = document.getElementById('copy');
+
+let r = 0, g = 0, b = 0, opacity = 0.3, blur = 0;
+
+slider_red.addEventListener('input', (event) => {
+    r = slider_red.value;
+    // console.log('red', Number(r));
+    if(!r)
+        r = 0;
+    display.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+})
+
+slider_green.addEventListener('input', (event) => {
+    g = slider_green.value;
+    // console.log('green', Number(g));
+    if(!g)
+        g = 0;
+    display.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+})
+
+slider_blue.addEventListener('input', (event) => {
+    b = slider_blue.value;
+    // console.log('blue', Number(b));
+    if(!b)
+        b = 0;
+    display.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+})
+
+slider_opacity.addEventListener('input', (event) => {
+    opacity = slider_opacity.value;
+    // console.log(opacity);
+    if(!opacity)
+        opacity = 0;
+    // card.style.opacity = opacity;
+    card.style.backgroundImage = `linear-gradient(155deg, rgba(255, 255, 255, ${opacity}), rgba(255, 255, 255, 0))`;
+    code_gradient.innerText = opacity;
+})
+
+slider_blur.addEventListener('input', (event) => {
+    blur = slider_blur.value;
+    // console.log(blur);
+    if(!blur)
+        blur = 0;
+    circle_one.style.backdropFilter = `blur(${blur}px)`;
+    circle_two.style.backdropFilter = `blur(${blur}px)`;
+    code_filter_one.innerText = blur;
+    code_filter_two.innerText = blur;
+})
+
+copy_btn.addEventListener('click', (event) => {
+    let css_snippet = document.getElementById('css-snippet');
+    navigator.clipboard.writeText(css_snippet.innerText).then(() => alert('copied'));
+})
+    </script>
+</body>
+</html>
